@@ -2,7 +2,7 @@
 //  To_do_ListApp.swift
 //  To do List
 //
-//  Created by Aiman  on 3/8/25.
+//  Created by Aiman on 3/8/25.
 //
 
 import SwiftUI
@@ -11,7 +11,9 @@ import SwiftUI
 struct To_do_ListApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                ListView()
+            }
         }
     }
 }

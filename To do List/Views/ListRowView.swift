@@ -2,17 +2,26 @@
 //  ListRowView.swift
 //  To do List
 //
-//  Created by Aiman  on 3/9/25.
+//  Created by Aiman on 3/9/25.
 //
 
 import SwiftUI
 
 struct ListRowView: View {
+    
+    let title: String
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack{
+            Text(title)
+            // Sets items to the left
+            Spacer()
+            // Import check mark icon
+            Image(systemName: "checkmark.circle")
+        }
     }
 }
 
+
 #Preview {
-    ListRowView()
+    ListRowView(title: "task")
 }
