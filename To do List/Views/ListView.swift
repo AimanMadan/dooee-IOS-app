@@ -8,28 +8,27 @@
 import SwiftUI
 
 struct ListView: View {
+    
+    // Data array
+    @State var items: [ItemModel] = [
+        ItemModel(title: "Setup a meeting with Ava", isCompleted: false),
+        ItemModel(title: "Submit CA11", isCompleted: true),
+        ItemModel(title: "Update club's server", isCompleted: false),
+    ]
+    
+    
     var body: some View {
-        
-        // Data array
-        @State var items: [String] = [
-            "Setup zoom call with Ava",
-            "Get a room for AI club",
-            "Update the AI club discord server",
-            "Mango",
-            "Pineapple"
-        ]
-        
-        
         // List View
         List {
-            ForEach(items, id: \.self) { item in
-                ListRowView(title: item)
+            ForEach(items) { item in
+                ListRowView(item: ItemModel(title: item.title, isCompleted: item.isCompleted))
             }
         }
+        
         // list styles
-        .listStyle(InsetGroupedListStyle())
+        .listStyle(InsetGroupedListStyle()  )
         // Title
-        .navigationBarTitle("dooee 🐛")
+        .navigationBarTitle("Dooee 🐛")
         // Navigation bar items
         .navigationBarItems(
             //left item
