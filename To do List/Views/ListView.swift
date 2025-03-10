@@ -12,9 +12,9 @@ struct ListView: View {
         
         // Data array
         @State var items: [String] = [
-            "Apple",
-            "Banana",
-            "Orange",
+            "Setup zoom call with Ava",
+            "Get a room for AI club",
+            "Update the AI club discord server",
             "Mango",
             "Pineapple"
         ]
@@ -27,14 +27,17 @@ struct ListView: View {
             }
         }
         // list styles
-        .listStyle(DefaultListStyle())
+        .listStyle(InsetGroupedListStyle())
         // Title
         .navigationBarTitle("dooee 🐛")
-        // Edit and Add buttons
+        // Navigation bar items
         .navigationBarItems(
+            //left item
             leading: EditButton(), // edit
+            // right item
             trailing:
-                NavigationLink("Add", destination: Text("SwiftUI📱"))) // intent
+                // intent(name, view)
+                NavigationLink("Add", destination: AddView()))
     }
 }
 
